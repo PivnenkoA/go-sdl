@@ -55,5 +55,6 @@ func main() {
 	fmt.Println("Визуализирую")
 	fmt.Println("через", d, "секунд окно закроется.")
 	sdl.Delay(d * 1000)
+	fmt.Println("Выхожу")
 
 }
