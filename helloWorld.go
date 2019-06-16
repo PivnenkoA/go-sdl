@@ -14,6 +14,12 @@ const (
 var d uint32 = 7
 
 func main() {
+
+	if err := sdl.Init(sdl.INIT_EVERYTHING); err != nil {
+		panic(err)
+	}
+	defer sdl.Quit()
+
 	window, err := sdl.CreateWindow("helloWorld", 100, 100, w, h, sdl.WINDOW_SHOWN)
 	if err != nil {
 		panic(err)
@@ -49,5 +55,5 @@ func main() {
 	fmt.Println("Визуализирую")
 	fmt.Println("через", d, "секунд окно закроется.")
 	sdl.Delay(d * 1000)
-	sdl.Quit()
+
 }
